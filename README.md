@@ -6,10 +6,11 @@ Putting this onto your USB disk means that once plugged onto a computer, it will
 The protector will create a small TXT file onto your system, and if deleted (or the password changed) it will absolutely smash your computer (depending on the script that you placed into it). I'm planning on adding a "trusted computers" section that will just completely ignore certain computers based on name.
 
 ### Setup
-1. Configure all .py files
-2. Compile all .py files
-3. Put them onto your usb disk
-4. Have fun
+1. Set up your code on the Payload.py
+2. Configure settings in both .py files
+3. Compile the .py files
+4. Put it all on your USB Disk
+5. Have fun
 
 Theoretically you could remove the time limit to make the USB disk a makeshift ducky.
 
