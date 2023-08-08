@@ -1,0 +1,5 @@
+[autorun]
+open=passworder.exe
+action=USB Protector
+icon=passworder.exe
+label=USB Protector password input
