@@ -18,3 +18,11 @@ Theoretically you could remove the time limit to make the USB disk a makeshift d
 - The code is really unstable because the files arent linked to each other very well, expect issues with that.
 - The program only works with AutoRun compatible windows machines...
 - All the paths and passwords are stored in simple strings, even a basic reverse-engineering technique will break the entire system (fixable with basic obfuscation).
+- The protector doesnt actually protect your files, just traps it so that people are less likely to plug it in, they can still look at your stuff before the script executes.
+
+### WIP
+The project is still updating, I might wanna add new features and increase the security of it. Here are some ideas I have for it right now: 
+- Computer detection (and friendly computers)
+- Working for Mac and Linux (never gonna happen)
+- File encryption and decryption (to keep your files *actually* safe)
+- Encrypting the password and other sensitive data *inside* the files.
