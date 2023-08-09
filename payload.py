@@ -1,6 +1,6 @@
 import time
 
-passwordStorage = "password.txt" # location where the password is stored at, same as the payload.py password storage
+passwordStorage = "MemWare-password.txt" # location where the password is stored at, same as the payload.py password storage
                      # input the whole path, including the file name
 
 password = "password" # If they input this password, the program will not run.
